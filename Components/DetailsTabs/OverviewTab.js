@@ -9,7 +9,6 @@ import {
   ScrollView,
   TouchableOpacity,
 } from "react-native";
-import createTabNavigator from "react-navigation";
 
 class TitleShow extends React.Component {
   static navigationOptions = {
@@ -84,6 +83,7 @@ export default class OverviewTab extends React.Component {
         padding: 10, 
         backgroundColor: "#fff"
       }}>
+        
         <TitleShow
           style={{
             alignItems: "center"
@@ -91,6 +91,9 @@ export default class OverviewTab extends React.Component {
           uri={this.props.navigation.state.params.image_url}
           tagline={this.props.navigation.state.params.tagline}
         />
+        <Text style={ styles.orgContentLabel }>CATEGORY</Text>
+        <Seperator />
+        <TagList data={ [this.props.navigation.state.params.category] } />
         <Text style={ styles.orgContentLabel }>TECHNOLOGIES</Text>
         <Seperator />
         <TagList data={ this.props.navigation.state.params.tech }/>

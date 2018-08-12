@@ -123,7 +123,8 @@ export default class HomeScreen extends React.Component {
                     tech: item.technology_tags,
                     topic: item.topic_tags,
                     proposal: item.proposal_tags,
-                    description: item.description
+                    description: item.description,
+                    precis: item.precis,
                   })
                 }}
               >

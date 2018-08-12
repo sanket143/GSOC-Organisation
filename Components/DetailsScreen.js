@@ -7,22 +7,7 @@ import Icon from "react-native-vector-icons/Ionicons";
 
 import OverviewTab from "./DetailsTabs/OverviewTab";
 import DescriptionTab from "./DetailsTabs/DescriptionTab";
-/*
-const DetailsTab = createBottomTabNavigator({
-  Overview: {
-    screen: OverviewTab
-  },
-  Description: {
-    screen: DescriptionTab
-  }
-},
-{
-  initialRouteName: "Overview",
-  swipeEnabled: true,
-  lazy: false
-});
-*/
-
+import ContactTab from "./DetailsTabs/ContactTab";
 
 export default createMaterialBottomTabNavigator({
   Overview: {
@@ -34,6 +19,15 @@ export default createMaterialBottomTabNavigator({
       )
     }
   },
+  Contact: {
+    screen: ContactTab,
+    navigationOptions: {
+      tabBarLabel: "Contact",
+      tabBarIcon: ({ tintColor }) => (
+        <Icon name="ios-contact-outline" color={ tintColor } size={24} />
+      )
+    }
+  },
   Description: {
     screen: DescriptionTab,
     navigationOptions: {
@@ -42,12 +36,14 @@ export default createMaterialBottomTabNavigator({
         <Icon name="ios-list" color={ tintColor } size={24} />
       )
     }
-  }
+  },
 },
 {
+  shifting: true,
   initialRouteName: "Overview",
-  order: ["Overview", "Description"],
+  order: ["Overview", "Description", "Contact"],
   activeTintColor: "orange",
+  swipeEnabled: true,
   barStyle: {
     backgroundColor: "white"
   }

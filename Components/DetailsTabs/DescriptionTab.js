@@ -23,27 +23,36 @@ class Seperator extends React.Component {
 export default class DescriptionTab extends React.Component {
   render(){
     return(
-      <ScrollView
+      <View
         style={{
           backgroundColor: "white"
-        }}
-      >
-        <Text style={ styles.titleText }>{ this.props.navigation.state.params.name }</Text>
-        <Seperator />
-        <Text style={ styles.descriptionText }>{ this.props.navigation.state.params.description }</Text>
-      </ScrollView>
+        }}>
+        <ScrollView
+          style={{
+            backgroundColor: "white",
+            marginRight: 10,
+            marginLeft: 10
+          }}
+        >
+          <Text style={ styles.titleText }>{ this.props.navigation.state.params.name }</Text>
+          <Seperator />
+          <Text style={ styles.descriptionText }>{ this.props.navigation.state.params.description }</Text>
+        </ScrollView>
+      </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
   titleText: {
-    fontSize: 25,
+    fontSize: 28,
+    marginTop: 10,
     textAlign: "center",
     color: "#888",
     fontWeight: "bold"
   },
   descriptionText: {
-    fontSize: 20
+    fontSize: 20,
+    color: "#555"
   }
 })
